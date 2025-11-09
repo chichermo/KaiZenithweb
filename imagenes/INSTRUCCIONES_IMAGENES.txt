@@ -1,0 +1,30 @@
+INSTRUCCIONES PARA SUBIR IMÁGENES
+==================================
+
+Sube las imágenes de tus trabajos a esta carpeta (imagenes/) con los siguientes nombres exactos:
+
+CONSTRUCCIÓN:
+- demolicion-bodega-2.jpg (Demolición de Bodega (2))
+- demolicion-bodega.jpg (Demolición de Bodega)
+- construccion-porton.jpg (Construcción de Portón)
+- protecciones-metalicas.jpg (Protecciones Metálicas)
+- estructura-metalica-cancha.jpg (Estructura Metálica para Cancha)
+- cortavista.jpg (Cortavista - Estructura Metálica)
+- regularizacion-bodega.jpg (Regularización de Bodega)
+- pintura-interior-exterior.jpg (Pintura Interior y Exterior)
+
+SOLDADURAS:
+- soldaduras-especiales.jpg (Soldaduras Especiales)
+- reparacion-soldaduras.jpg (Reparación de Soldaduras)
+
+REPARACIONES/MAQUINARIA:
+- instalacion-tina-bano.jpg (Instalación de Tina de Baño)
+- reparacion-jardinera.jpg (Reparación de Jardinera)
+- reparacion-fugas-aceite.jpg (Reparación de Fugas de Aceite)
+
+NOTAS:
+- Los nombres deben ser EXACTAMENTE como se muestran arriba (en minúsculas, con guiones)
+- Formatos aceptados: .jpg, .jpeg, .png, .webp
+- Se recomienda optimizar las imágenes antes de subirlas (máximo 500KB cada una)
+- Resolución recomendada: mínimo 1200x900px
+
