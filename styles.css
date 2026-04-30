@@ -1253,6 +1253,37 @@ section {
     section {
         padding: 3rem 0;
     }
+
+    .modal-content {
+        max-width: 92%;
+        max-height: 72%;
+    }
+
+    .modal-caption {
+        bottom: 88px;
+        font-size: 1rem;
+        padding: 0.65rem 1.1rem;
+        width: calc(100% - 2rem);
+        border-radius: 14px;
+    }
+
+    .modal-nav-btn {
+        top: auto;
+        bottom: 20px;
+        transform: none;
+        width: 58px;
+        height: 58px;
+        font-size: 2rem;
+        background: rgba(255, 255, 255, 0.28);
+    }
+
+    .modal-nav-prev {
+        left: 18px;
+    }
+
+    .modal-nav-next {
+        right: 18px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1274,6 +1305,31 @@ section {
 
     .form-container {
         padding: 1.5rem 1rem;
+    }
+
+    .modal-content {
+        max-width: 94%;
+        max-height: 66%;
+    }
+
+    .modal-close {
+        top: 14px;
+        right: 14px;
+        width: 42px;
+        height: 42px;
+        font-size: 2rem;
+    }
+
+    .modal-caption {
+        bottom: 92px;
+        font-size: 0.9rem;
+        padding: 0.55rem 0.9rem;
+    }
+
+    .modal-nav-btn {
+        bottom: 18px;
+        width: 56px;
+        height: 56px;
     }
 }
 
