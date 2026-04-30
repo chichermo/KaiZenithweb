@@ -978,6 +978,20 @@ section {
     margin: 0;
 }
 
+.mapa-container {
+    margin-top: 2.5rem;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(212, 175, 55, 0.1);
+    transition: all 0.3s ease;
+}
+
+.mapa-container:hover {
+    box-shadow: 0 8px 30px rgba(212, 175, 55, 0.2);
+    border-color: rgba(212, 175, 55, 0.3);
+}
+
 /* ============================================
    FOOTER
    ============================================ */
@@ -1236,6 +1250,273 @@ section {
 }
 
 /* ============================================
+   POR QUÉ ELEGIRNOS / FEATURES
+   ============================================ */
+.por-que-elegirnos {
+    background: white;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    text-align: center;
+    padding: 2.5rem 2rem;
+    border-radius: 20px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: var(--color-bg-light);
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.feature-card:hover::before {
+    transform: scaleX(1);
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(212, 175, 55, 0.15);
+    border-color: var(--color-primary);
+    background: white;
+}
+
+.feature-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    background: var(--gradient-gold);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.feature-card:hover .feature-icon {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 12px 35px rgba(212, 175, 55, 0.4);
+}
+
+.feature-icon svg {
+    width: 36px;
+    height: 36px;
+}
+
+.feature-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: var(--color-secondary);
+}
+
+.feature-card p {
+    color: var(--color-text-light);
+    line-height: 1.8;
+}
+
+/* ============================================
+   ESTADÍSTICAS
+   ============================================ */
+.estadisticas {
+    background: linear-gradient(135deg, var(--color-secondary) 0%, #1a1a1a 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.estadisticas::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 3rem;
+    position: relative;
+    z-index: 1;
+}
+
+.stat-card {
+    text-align: center;
+    padding: 2rem;
+}
+
+.stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+    line-height: 1;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ============================================
+   SERVICIOS PREVIEW
+   ============================================ */
+.servicios-preview {
+    background: var(--color-bg-light);
+}
+
+.servicio-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+}
+
+.servicio-link:hover {
+    gap: 1rem;
+    color: var(--color-primary-dark);
+}
+
+.servicio-card .servicio-link {
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+}
+
+.servicio-card:hover .servicio-link {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ============================================
+   TESTIMONIOS
+   ============================================ */
+.testimonios {
+    background: white;
+}
+
+.testimonios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.testimonio-card {
+    background: var(--color-bg-light);
+    padding: 2.5rem;
+    border-radius: 20px;
+    border: 2px solid rgba(212, 175, 55, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonio-card::before {
+    content: '"';
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    font-family: 'Playfair Display', serif;
+    font-size: 8rem;
+    color: rgba(212, 175, 55, 0.1);
+    line-height: 1;
+}
+
+.testimonio-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(212, 175, 55, 0.15);
+    border-color: var(--color-primary);
+    background: white;
+}
+
+.testimonio-stars {
+    color: var(--color-primary);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+}
+
+.testimonio-text {
+    color: var(--color-text);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+}
+
+.testimonio-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.testimonio-avatar {
+    width: 50px;
+    height: 50px;
+    background: var(--gradient-gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    flex-shrink: 0;
+}
+
+.testimonio-avatar svg {
+    width: 24px;
+    height: 24px;
+}
+
+.testimonio-author h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+    color: var(--color-secondary);
+}
+
+.testimonio-author p {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    margin: 0;
+}
+
+/* ============================================
    ANIMACIONES Y EFECTOS
    ============================================ */
 @keyframes fadeInUp {
@@ -1258,5 +1539,282 @@ section {
     html {
         scroll-behavior: smooth;
     }
+}
+
+/* ============================================
+   MEJORAS ADICIONALES
+   ============================================ */
+
+/* Efecto de parallax sutil en hero */
+.hero-content {
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mejoras en imágenes con lazy loading */
+img[data-src] {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+img.loaded {
+    opacity: 1;
+}
+
+/* Efecto de shimmer en botones */
+.btn-primary::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s;
+}
+
+.btn-primary:hover::after {
+    left: 100%;
+}
+
+/* Mejoras en responsive para nuevas secciones */
+@media (max-width: 768px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    .testimonios-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-number {
+        font-size: 2.5rem;
+    }
+
+    .testimonio-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .feature-card {
+        padding: 2rem 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+}
+
+/* Efecto de glassmorphism mejorado */
+.navbar {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Animación de entrada para cards */
+@keyframes slideInFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.servicio-card,
+.feature-card,
+.testimonio-card {
+    animation: slideInFromBottom 0.6s ease-out backwards;
+}
+
+.servicio-card:nth-child(1),
+.feature-card:nth-child(1),
+.testimonio-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.servicio-card:nth-child(2),
+.feature-card:nth-child(2),
+.testimonio-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.servicio-card:nth-child(3),
+.feature-card:nth-child(3),
+.testimonio-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.servicio-card:nth-child(4),
+.feature-card:nth-child(4),
+.testimonio-card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+/* Mejora en accesibilidad - focus visible */
+*:focus-visible {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* Mejoras de accesibilidad - skip link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--color-primary);
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    z-index: 10000;
+    border-radius: 0 0 8px 0;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Mejora en contraste para mejor legibilidad */
+body {
+    color: var(--color-text);
+}
+
+/* Mejora en estados de carga */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Animación de carga para imágenes */
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+img[data-src] {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite;
+}
+
+/* Mejora en transiciones para mejor rendimiento */
+.servicio-card,
+.feature-card,
+.testimonio-card,
+.gallery-item {
+    will-change: transform;
+}
+
+/* Efecto de hover mejorado en servicios preview */
+.servicios-preview .servicio-card {
+    position: relative;
+}
+
+.servicios-preview .servicio-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 20px;
+    pointer-events: none;
+}
+
+.servicios-preview .servicio-card:hover::after {
+    opacity: 1;
+}
+
+/* ============================================
+   MEJORAS DE RENDIMIENTO Y UX
+   ============================================ */
+
+/* Prevenir layout shift en imágenes */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Mejora en estados de hover para mejor feedback */
+.btn:active {
+    transform: scale(0.98);
+}
+
+/* Mejora en transiciones para elementos interactivos */
+a, button {
+    transition: all 0.2s ease;
+}
+
+/* Efecto de carga mejorado */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.loading-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Mejora en scrollbar para navegadores webkit */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-bg-light);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary-dark);
+}
+
+/* Mejora en selección de texto */
+::selection {
+    background: var(--color-primary);
+    color: white;
+}
+
+::-moz-selection {
+    background: var(--color-primary);
+    color: white;
 }
 
