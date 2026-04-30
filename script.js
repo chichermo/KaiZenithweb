@@ -71,974 +71,938 @@ if (emailElement) emailElement.textContent = CONFIG.emailEmpresa;
 const galleryGrid = document.getElementById('galleryGrid');
 const filterButtons = document.querySelectorAll('.filter-btn');
 
-const RAW_GALLERY_FILES = [
+const GALLERY_FILES = [
     {
-        "src": "Construcci�n de protecciones�/1000000556.jpg",
-        "title": "Construcci�n de protecciones�",
+        "src": "imagenes/Construcción de protecciones /1000000556.jpg",
+        "title": "Construcción de protecciones",
         "category": "construccion"
     },
     {
-        "src": "Construcci�n de protecciones�/1000000565.jpg",
-        "title": "Construcci�n de protecciones�",
+        "src": "imagenes/Construcción de protecciones /1000000565.jpg",
+        "title": "Construcción de protecciones",
         "category": "construccion"
     },
     {
-        "src": "Construcci�n de protecciones�/1000000567.jpg",
-        "title": "Construcci�n de protecciones�",
+        "src": "imagenes/Construcción de protecciones /1000000567.jpg",
+        "title": "Construcción de protecciones",
         "category": "construccion"
     },
     {
-        "src": "Construcci�n de protecciones�/1000000569.jpg",
-        "title": "Construcci�n de protecciones�",
+        "src": "imagenes/Construcción de protecciones /1000000569.jpg",
+        "title": "Construcción de protecciones",
         "category": "construccion"
     },
     {
-        "src": "Construcci�n de reja con muros de hormig�n y port�n de corredera/1000000579.jpg",
-        "title": "Construcci�n de reja con muros de hormig�n y port�n de corredera",
+        "src": "imagenes/Construcción de reja con muros de hormigón y portón de corredera/1000000579.jpg",
+        "title": "Construcción de reja con muros de hormigón y portón de corredera",
         "category": "construccion"
     },
     {
-        "src": "Construcci�n de reja con muros de hormig�n y port�n de corredera/1000000581.jpg",
-        "title": "Construcci�n de reja con muros de hormig�n y port�n de corredera",
+        "src": "imagenes/Construcción de reja con muros de hormigón y portón de corredera/1000000581.jpg",
+        "title": "Construcción de reja con muros de hormigón y portón de corredera",
         "category": "construccion"
     },
     {
-        "src": "Construcci�n de reja con muros de hormig�n y port�n de corredera/1000000591.jpg",
-        "title": "Construcci�n de reja con muros de hormig�n y port�n de corredera",
+        "src": "imagenes/Construcción de reja con muros de hormigón y portón de corredera/1000000591.jpg",
+        "title": "Construcción de reja con muros de hormigón y portón de corredera",
         "category": "construccion"
     },
     {
-        "src": "Construcci�n de reja con muros de hormig�n y port�n de corredera/1000000603.jpg",
-        "title": "Construcci�n de reja con muros de hormig�n y port�n de corredera",
+        "src": "imagenes/Construcción de reja con muros de hormigón y portón de corredera/1000000603.jpg",
+        "title": "Construcción de reja con muros de hormigón y portón de corredera",
         "category": "construccion"
     },
     {
-        "src": "Construcci�n de reja con muros de hormig�n y port�n de corredera/1000000609.jpg",
-        "title": "Construcci�n de reja con muros de hormig�n y port�n de corredera",
+        "src": "imagenes/Construcción de reja con muros de hormigón y portón de corredera/1000000609.jpg",
+        "title": "Construcción de reja con muros de hormigón y portón de corredera",
         "category": "construccion"
     },
     {
-        "src": "Construcci�n de reja con muros de hormig�n y port�n de corredera/1000000646.jpg",
-        "title": "Construcci�n de reja con muros de hormig�n y port�n de corredera",
+        "src": "imagenes/Construcción de reja con muros de hormigón y portón de corredera/1000000646.jpg",
+        "title": "Construcción de reja con muros de hormigón y portón de corredera",
         "category": "construccion"
     },
     {
-        "src": "Construcci�n de reja con muros de hormig�n y port�n de corredera/1000000660.jpg",
-        "title": "Construcci�n de reja con muros de hormig�n y port�n de corredera",
+        "src": "imagenes/Construcción de reja con muros de hormigón y portón de corredera/1000000660.jpg",
+        "title": "Construcción de reja con muros de hormigón y portón de corredera",
         "category": "construccion"
     },
     {
-        "src": "Construcci�n de reja con muros de hormig�n y port�n de corredera/1000000665.jpg",
-        "title": "Construcci�n de reja con muros de hormig�n y port�n de corredera",
+        "src": "imagenes/Construcción de reja con muros de hormigón y portón de corredera/1000000665.jpg",
+        "title": "Construcción de reja con muros de hormigón y portón de corredera",
         "category": "construccion"
     },
     {
-        "src": "Construcci�n de reja con muros de hormig�n y port�n de corredera/1000000670.jpg",
-        "title": "Construcci�n de reja con muros de hormig�n y port�n de corredera",
+        "src": "imagenes/Construcción de reja con muros de hormigón y portón de corredera/1000000670.jpg",
+        "title": "Construcción de reja con muros de hormigón y portón de corredera",
         "category": "construccion"
     },
     {
-        "src": "Cortavistas en estructura met�lica y policarbonato/1000000376.jpg",
-        "title": "Cortavistas en estructura met�lica y policarbonato",
+        "src": "imagenes/Cortavistas en estructura metálica y policarbonato/1000000376.jpg",
+        "title": "Cortavistas en estructura metálica y policarbonato",
         "category": "construccion"
     },
     {
-        "src": "Cortavistas en estructura met�lica y policarbonato/1000000378.jpg",
-        "title": "Cortavistas en estructura met�lica y policarbonato",
+        "src": "imagenes/Cortavistas en estructura metálica y policarbonato/1000000378.jpg",
+        "title": "Cortavistas en estructura metálica y policarbonato",
         "category": "construccion"
     },
     {
-        "src": "Cortavistas en estructura met�lica y policarbonato/1000000380.jpg",
-        "title": "Cortavistas en estructura met�lica y policarbonato",
+        "src": "imagenes/Cortavistas en estructura metálica y policarbonato/1000000380.jpg",
+        "title": "Cortavistas en estructura metálica y policarbonato",
         "category": "construccion"
     },
     {
-        "src": "Cortavistas en estructura met�lica y policarbonato/1000000382.jpg",
-        "title": "Cortavistas en estructura met�lica y policarbonato",
+        "src": "imagenes/Cortavistas en estructura metálica y policarbonato/1000000382.jpg",
+        "title": "Cortavistas en estructura metálica y policarbonato",
         "category": "construccion"
     },
     {
-        "src": "Cortavistas en estructura met�lica y policarbonato/1000004670.jpg",
-        "title": "Cortavistas en estructura met�lica y policarbonato",
+        "src": "imagenes/Cortavistas en estructura metálica y policarbonato/1000004670.jpg",
+        "title": "Cortavistas en estructura metálica y policarbonato",
         "category": "construccion"
     },
     {
-        "src": "Cortavistas en estructura met�lica y policarbonato/1000004673.jpg",
-        "title": "Cortavistas en estructura met�lica y policarbonato",
+        "src": "imagenes/Cortavistas en estructura metálica y policarbonato/1000004673.jpg",
+        "title": "Cortavistas en estructura metálica y policarbonato",
         "category": "construccion"
     },
     {
-        "src": "desarme de bodega/1000001606.jpg",
+        "src": "imagenes/desarme de bodega/1000001606.jpg",
         "title": "desarme de bodega",
         "category": "construccion"
     },
     {
-        "src": "desarme de bodega/1000001609.jpg",
+        "src": "imagenes/desarme de bodega/1000001609.jpg",
         "title": "desarme de bodega",
         "category": "construccion"
     },
     {
-        "src": "desarme de bodega/1000001633.jpg",
+        "src": "imagenes/desarme de bodega/1000001633.jpg",
         "title": "desarme de bodega",
         "category": "construccion"
     },
     {
-        "src": "desarme de bodega/1000001636.jpg",
+        "src": "imagenes/desarme de bodega/1000001636.jpg",
         "title": "desarme de bodega",
         "category": "construccion"
     },
     {
-        "src": "desarme de bodega/1000001639.jpg",
+        "src": "imagenes/desarme de bodega/1000001639.jpg",
         "title": "desarme de bodega",
         "category": "construccion"
     },
     {
-        "src": "desarme de bodega/1000001641.jpg",
+        "src": "imagenes/desarme de bodega/1000001641.jpg",
         "title": "desarme de bodega",
         "category": "construccion"
     },
     {
-        "src": "desarme de bodega/1000001643.jpg",
+        "src": "imagenes/desarme de bodega/1000001643.jpg",
         "title": "desarme de bodega",
         "category": "construccion"
     },
     {
-        "src": "desarme de bodega/1000001645.jpg",
+        "src": "imagenes/desarme de bodega/1000001645.jpg",
         "title": "desarme de bodega",
         "category": "construccion"
     },
     {
-        "src": "desarme de bodega/1000001647.jpg",
+        "src": "imagenes/desarme de bodega/1000001647.jpg",
         "title": "desarme de bodega",
         "category": "construccion"
     },
     {
-        "src": "desarme de bodega/1000001649.jpg",
+        "src": "imagenes/desarme de bodega/1000001649.jpg",
         "title": "desarme de bodega",
         "category": "construccion"
     },
     {
-        "src": "desarme de bodega/1000001655.jpg",
+        "src": "imagenes/desarme de bodega/1000001655.jpg",
         "title": "desarme de bodega",
         "category": "construccion"
     },
     {
-        "src": "desarme de bodega/1000001657.jpg",
+        "src": "imagenes/desarme de bodega/1000001657.jpg",
         "title": "desarme de bodega",
         "category": "construccion"
     },
     {
-        "src": "desarme de bodega/1000001659.jpg",
+        "src": "imagenes/desarme de bodega/1000001659.jpg",
         "title": "desarme de bodega",
         "category": "construccion"
     },
     {
-        "src": "desarme de bodega/1000001661.jpg",
+        "src": "imagenes/desarme de bodega/1000001661.jpg",
         "title": "desarme de bodega",
         "category": "construccion"
     },
     {
-        "src": "desarme de bodega/1000001667.jpg",
+        "src": "imagenes/desarme de bodega/1000001667.jpg",
         "title": "desarme de bodega",
         "category": "construccion"
     },
     {
-        "src": "desarme de bodega/1000001669.jpg",
+        "src": "imagenes/desarme de bodega/1000001669.jpg",
         "title": "desarme de bodega",
         "category": "construccion"
     },
     {
-        "src": "desarme de bodega/1000001671.jpg",
+        "src": "imagenes/desarme de bodega/1000001671.jpg",
         "title": "desarme de bodega",
         "category": "construccion"
     },
     {
-        "src": "desarme de bodega/1000001673.jpg",
+        "src": "imagenes/desarme de bodega/1000001673.jpg",
         "title": "desarme de bodega",
         "category": "construccion"
     },
     {
-        "src": "desarme de bodega/1000001679.jpg",
+        "src": "imagenes/desarme de bodega/1000001679.jpg",
         "title": "desarme de bodega",
         "category": "construccion"
     },
     {
-        "src": "desarme de bodega/1000001681.jpg",
+        "src": "imagenes/desarme de bodega/1000001681.jpg",
         "title": "desarme de bodega",
         "category": "construccion"
     },
     {
-        "src": "desarme de bodega/1000001683.jpg",
+        "src": "imagenes/desarme de bodega/1000001683.jpg",
         "title": "desarme de bodega",
         "category": "construccion"
     },
     {
-        "src": "desarme de bodega/1000001685.jpg",
+        "src": "imagenes/desarme de bodega/1000001685.jpg",
         "title": "desarme de bodega",
         "category": "construccion"
     },
     {
-        "src": "Escaleras/1000004676.jpg",
+        "src": "imagenes/Escaleras/1000004676.jpg",
         "title": "Escaleras",
         "category": "construccion"
     },
     {
-        "src": "Escaleras/1000004679.jpg",
+        "src": "imagenes/Escaleras/1000004679.jpg",
         "title": "Escaleras",
         "category": "construccion"
     },
     {
-        "src": "Escaleras/1000004682.jpg",
+        "src": "imagenes/Escaleras/1000004682.jpg",
         "title": "Escaleras",
         "category": "construccion"
     },
     {
-        "src": "Escaleras/1000004685.jpg",
+        "src": "imagenes/Escaleras/1000004685.jpg",
         "title": "Escaleras",
         "category": "construccion"
     },
     {
-        "src": "Escaleras/1000004688.jpg",
+        "src": "imagenes/Escaleras/1000004688.jpg",
         "title": "Escaleras",
         "category": "construccion"
     },
     {
-        "src": "Escaleras/1000004691.jpg",
+        "src": "imagenes/Escaleras/1000004691.jpg",
         "title": "Escaleras",
         "category": "construccion"
     },
     {
-        "src": "Escaleras/1000004694.jpg",
+        "src": "imagenes/Escaleras/1000004694.jpg",
         "title": "Escaleras",
         "category": "construccion"
     },
     {
-        "src": "Escaleras/1000004697.jpg",
+        "src": "imagenes/Escaleras/1000004697.jpg",
         "title": "Escaleras",
         "category": "construccion"
     },
     {
-        "src": "Escaleras/1000004700.jpg",
+        "src": "imagenes/Escaleras/1000004700.jpg",
         "title": "Escaleras",
         "category": "construccion"
     },
     {
-        "src": "Fabricaci�n de soporte para tablero de basquetbol�/1000000301.jpg",
-        "title": "Fabricaci�n de soporte para tablero de basquetbol�",
-        "category": "soldadura"
-    },
-    {
-        "src": "Fabricaci�n de soporte para tablero de basquetbol�/1000000339.jpg",
-        "title": "Fabricaci�n de soporte para tablero de basquetbol�",
-        "category": "soldadura"
-    },
-    {
-        "src": "Fabricaci�n de soporte para tablero de basquetbol�/1000000345.jpg",
-        "title": "Fabricaci�n de soporte para tablero de basquetbol�",
-        "category": "soldadura"
-    },
-    {
-        "src": "Fabricaci�n de soporte para tablero de basquetbol�/1000000348.jpg",
-        "title": "Fabricaci�n de soporte para tablero de basquetbol�",
-        "category": "soldadura"
-    },
-    {
-        "src": "Fabricaci�n de soporte para tablero de basquetbol�/1000000354.jpg",
-        "title": "Fabricaci�n de soporte para tablero de basquetbol�",
-        "category": "soldadura"
-    },
-    {
-        "src": "fotos varias/1000004739.jpg",
-        "title": "fotos varias",
-        "category": "logistica"
-    },
-    {
-        "src": "fotos varias/1000004743.jpg",
-        "title": "fotos varias",
-        "category": "logistica"
-    },
-    {
-        "src": "fotos varias/1000004747.jpg",
-        "title": "fotos varias",
-        "category": "logistica"
-    },
-    {
-        "src": "fotos varias/1000004751.jpg",
-        "title": "fotos varias",
-        "category": "logistica"
-    },
-    {
-        "src": "fotos varias/1000004755.jpg",
-        "title": "fotos varias",
-        "category": "logistica"
-    },
-    {
-        "src": "fotos varias/1000004759.jpg",
-        "title": "fotos varias",
-        "category": "logistica"
-    },
-    {
-        "src": "fotos varias/1000004763.jpg",
-        "title": "fotos varias",
-        "category": "logistica"
-    },
-    {
-        "src": "fotos varias/1000004767.jpg",
-        "title": "fotos varias",
-        "category": "logistica"
-    },
-    {
-        "src": "fotos varias/1000004771.jpg",
-        "title": "fotos varias",
-        "category": "logistica"
-    },
-    {
-        "src": "fotos varias/1000004775.jpg",
-        "title": "fotos varias",
-        "category": "logistica"
-    },
-    {
-        "src": "fotos varias/1000004779.jpg",
-        "title": "fotos varias",
-        "category": "logistica"
-    },
-    {
-        "src": "fotos varias/1000004783.jpg",
-        "title": "fotos varias",
-        "category": "logistica"
-    },
-    {
-        "src": "fotos varias/1000004787.jpg",
-        "title": "fotos varias",
-        "category": "logistica"
-    },
-    {
-        "src": "fotos varias/1000004789.jpg",
-        "title": "fotos varias",
-        "category": "logistica"
-    },
-    {
-        "src": "fotos varias/1000004791.jpg",
-        "title": "fotos varias",
-        "category": "logistica"
-    },
-    {
-        "src": "fotos varias/1000004793.jpg",
-        "title": "fotos varias",
-        "category": "logistica"
-    },
-    {
-        "src": "fotos varias/1000004795.jpg",
-        "title": "fotos varias",
-        "category": "logistica"
-    },
-    {
-        "src": "fotos varias/1000004797.jpg",
-        "title": "fotos varias",
-        "category": "logistica"
-    },
-    {
-        "src": "Pintura de casa exterior y cambio de canaletas�/1000003636.jpg",
-        "title": "Pintura de casa exterior y cambio de canaletas�",
+        "src": "imagenes/Fabricación de soporte para tablero de basquetbol /1000000301.jpg",
+        "title": "Fabricación de soporte para tablero de basquetbol",
         "category": "construccion"
     },
     {
-        "src": "Pintura de casa exterior y cambio de canaletas�/1000003639.jpg",
-        "title": "Pintura de casa exterior y cambio de canaletas�",
+        "src": "imagenes/Fabricación de soporte para tablero de basquetbol /1000000339.jpg",
+        "title": "Fabricación de soporte para tablero de basquetbol",
         "category": "construccion"
     },
     {
-        "src": "Pintura de casa exterior y cambio de canaletas�/1000003642.jpg",
-        "title": "Pintura de casa exterior y cambio de canaletas�",
+        "src": "imagenes/Fabricación de soporte para tablero de basquetbol /1000000345.jpg",
+        "title": "Fabricación de soporte para tablero de basquetbol",
         "category": "construccion"
     },
     {
-        "src": "Pintura de casa exterior y cambio de canaletas�/1000003645.jpg",
-        "title": "Pintura de casa exterior y cambio de canaletas�",
+        "src": "imagenes/Fabricación de soporte para tablero de basquetbol /1000000348.jpg",
+        "title": "Fabricación de soporte para tablero de basquetbol",
         "category": "construccion"
     },
     {
-        "src": "Pintura de casa exterior y cambio de canaletas�/1000003648.jpg",
-        "title": "Pintura de casa exterior y cambio de canaletas�",
+        "src": "imagenes/Fabricación de soporte para tablero de basquetbol /1000000354.jpg",
+        "title": "Fabricación de soporte para tablero de basquetbol",
         "category": "construccion"
     },
     {
-        "src": "Pintura de casa exterior y cambio de canaletas�/1000003652.jpg",
-        "title": "Pintura de casa exterior y cambio de canaletas�",
+        "src": "imagenes/fotos varias/1000004739.jpg",
+        "title": "fotos varias",
+        "category": "logistica"
+    },
+    {
+        "src": "imagenes/fotos varias/1000004743.jpg",
+        "title": "fotos varias",
+        "category": "logistica"
+    },
+    {
+        "src": "imagenes/fotos varias/1000004747.jpg",
+        "title": "fotos varias",
+        "category": "logistica"
+    },
+    {
+        "src": "imagenes/fotos varias/1000004751.jpg",
+        "title": "fotos varias",
+        "category": "logistica"
+    },
+    {
+        "src": "imagenes/fotos varias/1000004755.jpg",
+        "title": "fotos varias",
+        "category": "logistica"
+    },
+    {
+        "src": "imagenes/fotos varias/1000004759.jpg",
+        "title": "fotos varias",
+        "category": "logistica"
+    },
+    {
+        "src": "imagenes/fotos varias/1000004763.jpg",
+        "title": "fotos varias",
+        "category": "logistica"
+    },
+    {
+        "src": "imagenes/fotos varias/1000004767.jpg",
+        "title": "fotos varias",
+        "category": "logistica"
+    },
+    {
+        "src": "imagenes/fotos varias/1000004771.jpg",
+        "title": "fotos varias",
+        "category": "logistica"
+    },
+    {
+        "src": "imagenes/fotos varias/1000004775.jpg",
+        "title": "fotos varias",
+        "category": "logistica"
+    },
+    {
+        "src": "imagenes/fotos varias/1000004779.jpg",
+        "title": "fotos varias",
+        "category": "logistica"
+    },
+    {
+        "src": "imagenes/fotos varias/1000004783.jpg",
+        "title": "fotos varias",
+        "category": "logistica"
+    },
+    {
+        "src": "imagenes/fotos varias/1000004787.jpg",
+        "title": "fotos varias",
+        "category": "logistica"
+    },
+    {
+        "src": "imagenes/fotos varias/1000004789.jpg",
+        "title": "fotos varias",
+        "category": "logistica"
+    },
+    {
+        "src": "imagenes/fotos varias/1000004791.jpg",
+        "title": "fotos varias",
+        "category": "logistica"
+    },
+    {
+        "src": "imagenes/fotos varias/1000004793.jpg",
+        "title": "fotos varias",
+        "category": "logistica"
+    },
+    {
+        "src": "imagenes/fotos varias/1000004795.jpg",
+        "title": "fotos varias",
+        "category": "logistica"
+    },
+    {
+        "src": "imagenes/fotos varias/1000004797.jpg",
+        "title": "fotos varias",
+        "category": "logistica"
+    },
+    {
+        "src": "imagenes/Pintura de casa exterior y cambio de canaletas /1000003636.jpg",
+        "title": "Pintura de casa exterior y cambio de canaletas",
         "category": "construccion"
     },
     {
-        "src": "Pintura de casa exterior y cambio de canaletas�/1000003655.jpg",
-        "title": "Pintura de casa exterior y cambio de canaletas�",
+        "src": "imagenes/Pintura de casa exterior y cambio de canaletas /1000003639.jpg",
+        "title": "Pintura de casa exterior y cambio de canaletas",
         "category": "construccion"
     },
     {
-        "src": "Pintura de casa exterior y cambio de canaletas�/1000003658.jpg",
-        "title": "Pintura de casa exterior y cambio de canaletas�",
+        "src": "imagenes/Pintura de casa exterior y cambio de canaletas /1000003642.jpg",
+        "title": "Pintura de casa exterior y cambio de canaletas",
         "category": "construccion"
     },
     {
-        "src": "Pintura de casa exterior y cambio de canaletas�/1000003661.jpg",
-        "title": "Pintura de casa exterior y cambio de canaletas�",
+        "src": "imagenes/Pintura de casa exterior y cambio de canaletas /1000003645.jpg",
+        "title": "Pintura de casa exterior y cambio de canaletas",
         "category": "construccion"
     },
     {
-        "src": "Radier/1000004627.jpg",
+        "src": "imagenes/Pintura de casa exterior y cambio de canaletas /1000003648.jpg",
+        "title": "Pintura de casa exterior y cambio de canaletas",
+        "category": "construccion"
+    },
+    {
+        "src": "imagenes/Pintura de casa exterior y cambio de canaletas /1000003652.jpg",
+        "title": "Pintura de casa exterior y cambio de canaletas",
+        "category": "construccion"
+    },
+    {
+        "src": "imagenes/Pintura de casa exterior y cambio de canaletas /1000003655.jpg",
+        "title": "Pintura de casa exterior y cambio de canaletas",
+        "category": "construccion"
+    },
+    {
+        "src": "imagenes/Pintura de casa exterior y cambio de canaletas /1000003658.jpg",
+        "title": "Pintura de casa exterior y cambio de canaletas",
+        "category": "construccion"
+    },
+    {
+        "src": "imagenes/Pintura de casa exterior y cambio de canaletas /1000003661.jpg",
+        "title": "Pintura de casa exterior y cambio de canaletas",
+        "category": "construccion"
+    },
+    {
+        "src": "imagenes/Radier/1000004627.jpg",
         "title": "Radier",
         "category": "construccion"
     },
     {
-        "src": "Radier/1000004632.jpg",
+        "src": "imagenes/Radier/1000004632.jpg",
         "title": "Radier",
         "category": "construccion"
     },
     {
-        "src": "Radier/1000004635.jpg",
+        "src": "imagenes/Radier/1000004635.jpg",
         "title": "Radier",
         "category": "construccion"
     },
     {
-        "src": "Radier/1000004638.jpg",
+        "src": "imagenes/Radier/1000004638.jpg",
         "title": "Radier",
         "category": "construccion"
     },
     {
-        "src": "Radier/1000004640.jpg",
+        "src": "imagenes/Radier/1000004640.jpg",
         "title": "Radier",
         "category": "construccion"
     },
     {
-        "src": "Radier/1000004649.jpg",
+        "src": "imagenes/Radier/1000004649.jpg",
         "title": "Radier",
         "category": "construccion"
     },
     {
-        "src": "Radier/1000004652.jpg",
+        "src": "imagenes/Radier/1000004652.jpg",
         "title": "Radier",
         "category": "construccion"
     },
     {
-        "src": "Radier/1000004661.jpg",
+        "src": "imagenes/Radier/1000004661.jpg",
         "title": "Radier",
         "category": "construccion"
     },
     {
-        "src": "Radier/1000004664.jpg",
+        "src": "imagenes/Radier/1000004664.jpg",
         "title": "Radier",
         "category": "construccion"
     },
     {
-        "src": "Radier/1000004667.jpg",
+        "src": "imagenes/Radier/1000004667.jpg",
         "title": "Radier",
         "category": "construccion"
     },
     {
-        "src": "Remodelacion de bodega/1000001446.jpg",
+        "src": "imagenes/Remodelacion de bodega/1000001446.jpg",
         "title": "Remodelacion de bodega",
         "category": "construccion"
     },
     {
-        "src": "Remodelacion de bodega/1000001450.jpg",
+        "src": "imagenes/Remodelacion de bodega/1000001450.jpg",
         "title": "Remodelacion de bodega",
         "category": "construccion"
     },
     {
-        "src": "Remodelacion de bodega/1000001454.jpg",
+        "src": "imagenes/Remodelacion de bodega/1000001454.jpg",
         "title": "Remodelacion de bodega",
         "category": "construccion"
     },
     {
-        "src": "Remodelacion de bodega/1000001461.jpg",
+        "src": "imagenes/Remodelacion de bodega/1000001461.jpg",
         "title": "Remodelacion de bodega",
         "category": "construccion"
     },
     {
-        "src": "Remodelacion de bodega/1000001465.jpg",
+        "src": "imagenes/Remodelacion de bodega/1000001465.jpg",
         "title": "Remodelacion de bodega",
         "category": "construccion"
     },
     {
-        "src": "Remodelacion de bodega/1000001480.jpg",
+        "src": "imagenes/Remodelacion de bodega/1000001480.jpg",
         "title": "Remodelacion de bodega",
         "category": "construccion"
     },
     {
-        "src": "Remodelacion de bodega/1000001486.jpg",
+        "src": "imagenes/Remodelacion de bodega/1000001486.jpg",
         "title": "Remodelacion de bodega",
         "category": "construccion"
     },
     {
-        "src": "Remodelacion de bodega/1000001495.jpg",
+        "src": "imagenes/Remodelacion de bodega/1000001495.jpg",
         "title": "Remodelacion de bodega",
         "category": "construccion"
     },
     {
-        "src": "Remodelacion de bodega/1000001507.jpg",
+        "src": "imagenes/Remodelacion de bodega/1000001507.jpg",
         "title": "Remodelacion de bodega",
         "category": "construccion"
     },
     {
-        "src": "Remodelacion de bodega/1000001510.jpg",
+        "src": "imagenes/Remodelacion de bodega/1000001510.jpg",
         "title": "Remodelacion de bodega",
         "category": "construccion"
     },
     {
-        "src": "Remodelacion de bodega/1000001522.jpg",
+        "src": "imagenes/Remodelacion de bodega/1000001522.jpg",
         "title": "Remodelacion de bodega",
         "category": "construccion"
     },
     {
-        "src": "Remodelacion de bodega/1000001528.jpg",
+        "src": "imagenes/Remodelacion de bodega/1000001528.jpg",
         "title": "Remodelacion de bodega",
         "category": "construccion"
     },
     {
-        "src": "Remodelacion de bodega/1000001531.jpg",
+        "src": "imagenes/Remodelacion de bodega/1000001531.jpg",
         "title": "Remodelacion de bodega",
         "category": "construccion"
     },
     {
-        "src": "Remodelacion de bodega/1000001534.jpg",
+        "src": "imagenes/Remodelacion de bodega/1000001534.jpg",
         "title": "Remodelacion de bodega",
         "category": "construccion"
     },
     {
-        "src": "Remodelacion de bodega/1000001540.jpg",
+        "src": "imagenes/Remodelacion de bodega/1000001540.jpg",
         "title": "Remodelacion de bodega",
         "category": "construccion"
     },
     {
-        "src": "Remodelacion de bodega/1000001543.jpg",
+        "src": "imagenes/Remodelacion de bodega/1000001543.jpg",
         "title": "Remodelacion de bodega",
         "category": "construccion"
     },
     {
-        "src": "Remodelacion de bodega/1000001546.jpg",
+        "src": "imagenes/Remodelacion de bodega/1000001546.jpg",
         "title": "Remodelacion de bodega",
         "category": "construccion"
     },
     {
-        "src": "Remodelacion de bodega/1000001548.jpg",
+        "src": "imagenes/Remodelacion de bodega/1000001548.jpg",
         "title": "Remodelacion de bodega",
         "category": "construccion"
     },
     {
-        "src": "Remodelacion de bodega/1000001550.jpg",
+        "src": "imagenes/Remodelacion de bodega/1000001550.jpg",
         "title": "Remodelacion de bodega",
         "category": "construccion"
     },
     {
-        "src": "Remodelacion de bodega/1000001552.jpg",
+        "src": "imagenes/Remodelacion de bodega/1000001552.jpg",
         "title": "Remodelacion de bodega",
         "category": "construccion"
     },
     {
-        "src": "Remodelacion de bodega/1000001554.jpg",
+        "src": "imagenes/Remodelacion de bodega/1000001554.jpg",
         "title": "Remodelacion de bodega",
         "category": "construccion"
     },
     {
-        "src": "Remodelacion de bodega/1000001556.jpg",
+        "src": "imagenes/Remodelacion de bodega/1000001556.jpg",
         "title": "Remodelacion de bodega",
         "category": "construccion"
     },
     {
-        "src": "Remodelaci�n de oficinas con muebles a medida y piso Vinilico/1000003487.jpg",
-        "title": "Remodelaci�n de oficinas con muebles a medida y piso Vinilico",
+        "src": "imagenes/Remodelación de oficinas con muebles a medida y piso Vinilico/1000003487.jpg",
+        "title": "Remodelación de oficinas con muebles a medida y piso Vinilico",
         "category": "construccion"
     },
     {
-        "src": "Remodelaci�n de oficinas con muebles a medida y piso Vinilico/1000003490.jpg",
-        "title": "Remodelaci�n de oficinas con muebles a medida y piso Vinilico",
+        "src": "imagenes/Remodelación de oficinas con muebles a medida y piso Vinilico/1000003490.jpg",
+        "title": "Remodelación de oficinas con muebles a medida y piso Vinilico",
         "category": "construccion"
     },
     {
-        "src": "Remodelaci�n de oficinas con muebles a medida y piso Vinilico/1000003493.jpg",
-        "title": "Remodelaci�n de oficinas con muebles a medida y piso Vinilico",
+        "src": "imagenes/Remodelación de oficinas con muebles a medida y piso Vinilico/1000003493.jpg",
+        "title": "Remodelación de oficinas con muebles a medida y piso Vinilico",
         "category": "construccion"
     },
     {
-        "src": "Remodelaci�n de oficinas con muebles a medida y piso Vinilico/1000003730.jpg",
-        "title": "Remodelaci�n de oficinas con muebles a medida y piso Vinilico",
+        "src": "imagenes/Remodelación de oficinas con muebles a medida y piso Vinilico/1000003730.jpg",
+        "title": "Remodelación de oficinas con muebles a medida y piso Vinilico",
         "category": "construccion"
     },
     {
-        "src": "Remodelaci�n de oficinas con muebles a medida y piso Vinilico/1000003731.jpg",
-        "title": "Remodelaci�n de oficinas con muebles a medida y piso Vinilico",
+        "src": "imagenes/Remodelación de oficinas con muebles a medida y piso Vinilico/1000003731.jpg",
+        "title": "Remodelación de oficinas con muebles a medida y piso Vinilico",
         "category": "construccion"
     },
     {
-        "src": "Remodelaci�n de oficinas con muebles a medida y piso Vinilico/1000003732.jpg",
-        "title": "Remodelaci�n de oficinas con muebles a medida y piso Vinilico",
+        "src": "imagenes/Remodelación de oficinas con muebles a medida y piso Vinilico/1000003732.jpg",
+        "title": "Remodelación de oficinas con muebles a medida y piso Vinilico",
         "category": "construccion"
     },
     {
-        "src": "Remodelaci�n de oficinas con muebles a medida y piso Vinilico/1000003733.jpg",
-        "title": "Remodelaci�n de oficinas con muebles a medida y piso Vinilico",
+        "src": "imagenes/Remodelación de oficinas con muebles a medida y piso Vinilico/1000003733.jpg",
+        "title": "Remodelación de oficinas con muebles a medida y piso Vinilico",
         "category": "construccion"
     },
     {
-        "src": "Remodelaci�n de oficinas con muebles a medida y piso Vinilico/1000003742.jpg",
-        "title": "Remodelaci�n de oficinas con muebles a medida y piso Vinilico",
+        "src": "imagenes/Remodelación de oficinas con muebles a medida y piso Vinilico/1000003742.jpg",
+        "title": "Remodelación de oficinas con muebles a medida y piso Vinilico",
         "category": "construccion"
     },
     {
-        "src": "Reparaci�n de cilindro de maquina Caterpilla�/1000000109.jpg",
-        "title": "Reparaci�n de cilindro de maquina Caterpilla�",
-        "category": "maquinaria"
-    },
-    {
-        "src": "Reparaci�n de cilindro de maquina Caterpilla�/1000000115.jpg",
-        "title": "Reparaci�n de cilindro de maquina Caterpilla�",
-        "category": "maquinaria"
-    },
-    {
-        "src": "Reparaci�n de cilindro de maquina Caterpilla�/1000000116.jpg",
-        "title": "Reparaci�n de cilindro de maquina Caterpilla�",
-        "category": "maquinaria"
-    },
-    {
-        "src": "Reparaci�n de cilindro de maquina Caterpilla�/1000000117.jpg",
-        "title": "Reparaci�n de cilindro de maquina Caterpilla�",
-        "category": "maquinaria"
-    },
-    {
-        "src": "Reparaci�n de cilindro de maquina Caterpilla�/1000000147.jpg",
-        "title": "Reparaci�n de cilindro de maquina Caterpilla�",
-        "category": "maquinaria"
-    },
-    {
-        "src": "Reparaci�n de cilindro de maquina Caterpilla�/1000000148.jpg",
-        "title": "Reparaci�n de cilindro de maquina Caterpilla�",
-        "category": "maquinaria"
-    },
-    {
-        "src": "Reparaci�n de cilindro de maquina Caterpilla�/1000000149.jpg",
-        "title": "Reparaci�n de cilindro de maquina Caterpilla�",
-        "category": "maquinaria"
-    },
-    {
-        "src": "Reparaci�n de cilindro de maquina Caterpilla�/1000000153.jpg",
-        "title": "Reparaci�n de cilindro de maquina Caterpilla�",
-        "category": "maquinaria"
-    },
-    {
-        "src": "Reparaci�n de cilindro de maquina Caterpilla�/1000000163.jpg",
-        "title": "Reparaci�n de cilindro de maquina Caterpilla�",
-        "category": "maquinaria"
-    },
-    {
-        "src": "Reparaci�n de cilindro de maquina Caterpilla�/1000000168.jpg",
-        "title": "Reparaci�n de cilindro de maquina Caterpilla�",
-        "category": "maquinaria"
-    },
-    {
-        "src": "Reparaci�n de cilindro de maquina Caterpilla�/1000000171.jpg",
-        "title": "Reparaci�n de cilindro de maquina Caterpilla�",
-        "category": "maquinaria"
-    },
-    {
-        "src": "Reparaci�n de cilindro de maquina Caterpilla�/1000000182.jpg",
-        "title": "Reparaci�n de cilindro de maquina Caterpilla�",
-        "category": "maquinaria"
-    },
-    {
-        "src": "Reparaci�n de cilindro de maquina Caterpilla�/1000000186.jpg",
-        "title": "Reparaci�n de cilindro de maquina Caterpilla�",
-        "category": "maquinaria"
-    },
-    {
-        "src": "Reparaci�n de jardinera�/1000000193.jpg",
-        "title": "Reparaci�n de jardinera�",
+        "src": "imagenes/Reparación de cilindro de maquina Caterpilla /1000000109.jpg",
+        "title": "Reparación de cilindro de maquina Caterpilla",
         "category": "construccion"
     },
     {
-        "src": "Reparaci�n de jardinera�/1000000196.jpg",
-        "title": "Reparaci�n de jardinera�",
+        "src": "imagenes/Reparación de cilindro de maquina Caterpilla /1000000115.jpg",
+        "title": "Reparación de cilindro de maquina Caterpilla",
         "category": "construccion"
     },
     {
-        "src": "Reparaci�n de jardinera�/1000000199.jpg",
-        "title": "Reparaci�n de jardinera�",
+        "src": "imagenes/Reparación de cilindro de maquina Caterpilla /1000000116.jpg",
+        "title": "Reparación de cilindro de maquina Caterpilla",
         "category": "construccion"
     },
     {
-        "src": "Reparaci�n de jardinera�/1000000202.jpg",
-        "title": "Reparaci�n de jardinera�",
+        "src": "imagenes/Reparación de cilindro de maquina Caterpilla /1000000117.jpg",
+        "title": "Reparación de cilindro de maquina Caterpilla",
         "category": "construccion"
     },
     {
-        "src": "Reparaci�n de jardinera�/1000000205.jpg",
-        "title": "Reparaci�n de jardinera�",
+        "src": "imagenes/Reparación de cilindro de maquina Caterpilla /1000000147.jpg",
+        "title": "Reparación de cilindro de maquina Caterpilla",
         "category": "construccion"
     },
     {
-        "src": "Reparaci�n de jardinera�/1000000208.jpg",
-        "title": "Reparaci�n de jardinera�",
+        "src": "imagenes/Reparación de cilindro de maquina Caterpilla /1000000148.jpg",
+        "title": "Reparación de cilindro de maquina Caterpilla",
         "category": "construccion"
     },
     {
-        "src": "Reparaci�n de jardinera�/1000000211.jpg",
-        "title": "Reparaci�n de jardinera�",
+        "src": "imagenes/Reparación de cilindro de maquina Caterpilla /1000000149.jpg",
+        "title": "Reparación de cilindro de maquina Caterpilla",
         "category": "construccion"
     },
     {
-        "src": "Reparaci�n de jardinera�/1000000214.jpg",
-        "title": "Reparaci�n de jardinera�",
+        "src": "imagenes/Reparación de cilindro de maquina Caterpilla /1000000153.jpg",
+        "title": "Reparación de cilindro de maquina Caterpilla",
         "category": "construccion"
     },
     {
-        "src": "Reparaci�n de jardinera�/1000000217.jpg",
-        "title": "Reparaci�n de jardinera�",
+        "src": "imagenes/Reparación de cilindro de maquina Caterpilla /1000000163.jpg",
+        "title": "Reparación de cilindro de maquina Caterpilla",
         "category": "construccion"
     },
     {
-        "src": "Reparaci�n de jardinera�/1000000220.jpg",
-        "title": "Reparaci�n de jardinera�",
+        "src": "imagenes/Reparación de cilindro de maquina Caterpilla /1000000168.jpg",
+        "title": "Reparación de cilindro de maquina Caterpilla",
         "category": "construccion"
     },
     {
-        "src": "Reparaci�n de jardinera�/1000000223.jpg",
-        "title": "Reparaci�n de jardinera�",
+        "src": "imagenes/Reparación de cilindro de maquina Caterpilla /1000000171.jpg",
+        "title": "Reparación de cilindro de maquina Caterpilla",
         "category": "construccion"
     },
     {
-        "src": "Reparaci�n de jardinera�/1000000232.jpg",
-        "title": "Reparaci�n de jardinera�",
+        "src": "imagenes/Reparación de cilindro de maquina Caterpilla /1000000182.jpg",
+        "title": "Reparación de cilindro de maquina Caterpilla",
         "category": "construccion"
     },
     {
-        "src": "Reparaci�n de jardinera�/1000000235.jpg",
-        "title": "Reparaci�n de jardinera�",
+        "src": "imagenes/Reparación de cilindro de maquina Caterpilla /1000000186.jpg",
+        "title": "Reparación de cilindro de maquina Caterpilla",
         "category": "construccion"
     },
     {
-        "src": "Reparaci�n de paredes con humedad�/1000003664.jpg",
-        "title": "Reparaci�n de paredes con humedad�",
+        "src": "imagenes/Reparación de jardinera /1000000193.jpg",
+        "title": "Reparación de jardinera",
         "category": "construccion"
     },
     {
-        "src": "Reparaci�n de paredes con humedad�/1000003667.jpg",
-        "title": "Reparaci�n de paredes con humedad�",
+        "src": "imagenes/Reparación de jardinera /1000000196.jpg",
+        "title": "Reparación de jardinera",
         "category": "construccion"
     },
     {
-        "src": "Reparaci�n de paredes con humedad�/1000003670.jpg",
-        "title": "Reparaci�n de paredes con humedad�",
+        "src": "imagenes/Reparación de jardinera /1000000199.jpg",
+        "title": "Reparación de jardinera",
         "category": "construccion"
     },
     {
-        "src": "Reparaci�n de paredes con humedad�/1000003673.jpg",
-        "title": "Reparaci�n de paredes con humedad�",
+        "src": "imagenes/Reparación de jardinera /1000000202.jpg",
+        "title": "Reparación de jardinera",
         "category": "construccion"
     },
     {
-        "src": "Reparaci�n de paredes con humedad�/1000003676.jpg",
-        "title": "Reparaci�n de paredes con humedad�",
+        "src": "imagenes/Reparación de jardinera /1000000205.jpg",
+        "title": "Reparación de jardinera",
         "category": "construccion"
     },
     {
-        "src": "Reparaci�n de paredes con humedad�/1000003679.jpg",
-        "title": "Reparaci�n de paredes con humedad�",
+        "src": "imagenes/Reparación de jardinera /1000000208.jpg",
+        "title": "Reparación de jardinera",
         "category": "construccion"
     },
     {
-        "src": "Reparaci�n de paredes con humedad�/1000003682.jpg",
-        "title": "Reparaci�n de paredes con humedad�",
+        "src": "imagenes/Reparación de jardinera /1000000211.jpg",
+        "title": "Reparación de jardinera",
         "category": "construccion"
     },
     {
-        "src": "Reparaci�n de techo (logia), limpieza y pintura para techumbre (ba�o)/1000003529.jpg",
-        "title": "Reparaci�n de techo (logia), limpieza y pintura para techumbre (ba�o)",
+        "src": "imagenes/Reparación de jardinera /1000000214.jpg",
+        "title": "Reparación de jardinera",
         "category": "construccion"
     },
     {
-        "src": "Reparaci�n de techo (logia), limpieza y pintura para techumbre (ba�o)/1000003532.jpg",
-        "title": "Reparaci�n de techo (logia), limpieza y pintura para techumbre (ba�o)",
+        "src": "imagenes/Reparación de jardinera /1000000217.jpg",
+        "title": "Reparación de jardinera",
         "category": "construccion"
     },
     {
-        "src": "Reparaci�n de techo (logia), limpieza y pintura para techumbre (ba�o)/1000003583.jpg",
-        "title": "Reparaci�n de techo (logia), limpieza y pintura para techumbre (ba�o)",
+        "src": "imagenes/Reparación de jardinera /1000000220.jpg",
+        "title": "Reparación de jardinera",
         "category": "construccion"
     },
     {
-        "src": "Reparaci�n de techo (logia), limpieza y pintura para techumbre (ba�o)/1000003589.jpg",
-        "title": "Reparaci�n de techo (logia), limpieza y pintura para techumbre (ba�o)",
+        "src": "imagenes/Reparación de jardinera /1000000223.jpg",
+        "title": "Reparación de jardinera",
         "category": "construccion"
     },
     {
-        "src": "Reparaci�n de techo (logia), limpieza y pintura para techumbre (ba�o)/1000003592.jpg",
-        "title": "Reparaci�n de techo (logia), limpieza y pintura para techumbre (ba�o)",
+        "src": "imagenes/Reparación de jardinera /1000000232.jpg",
+        "title": "Reparación de jardinera",
         "category": "construccion"
     },
     {
-        "src": "Reparaci�n de techo (logia), limpieza y pintura para techumbre (ba�o)/1000003595.jpg",
-        "title": "Reparaci�n de techo (logia), limpieza y pintura para techumbre (ba�o)",
+        "src": "imagenes/Reparación de jardinera /1000000235.jpg",
+        "title": "Reparación de jardinera",
         "category": "construccion"
     },
     {
-        "src": "Reparaci�n de techo (logia), limpieza y pintura para techumbre (ba�o)/1000003598.jpg",
-        "title": "Reparaci�n de techo (logia), limpieza y pintura para techumbre (ba�o)",
+        "src": "imagenes/Reparación de paredes con humedad /1000003664.jpg",
+        "title": "Reparación de paredes con humedad",
         "category": "construccion"
     },
     {
-        "src": "Reparaci�n de techo (logia), limpieza y pintura para techumbre (ba�o)/1000003601.jpg",
-        "title": "Reparaci�n de techo (logia), limpieza y pintura para techumbre (ba�o)",
+        "src": "imagenes/Reparación de paredes con humedad /1000003667.jpg",
+        "title": "Reparación de paredes con humedad",
         "category": "construccion"
     },
     {
-        "src": "Reparaci�n de techo (logia), limpieza y pintura para techumbre (ba�o)/1000003604.jpg",
-        "title": "Reparaci�n de techo (logia), limpieza y pintura para techumbre (ba�o)",
+        "src": "imagenes/Reparación de paredes con humedad /1000003670.jpg",
+        "title": "Reparación de paredes con humedad",
         "category": "construccion"
     },
     {
-        "src": "Reparaci�n de techo (logia), limpieza y pintura para techumbre (ba�o)/1000003607.jpg",
-        "title": "Reparaci�n de techo (logia), limpieza y pintura para techumbre (ba�o)",
+        "src": "imagenes/Reparación de paredes con humedad /1000003673.jpg",
+        "title": "Reparación de paredes con humedad",
         "category": "construccion"
     },
     {
-        "src": "Reparaci�n de techo (logia), limpieza y pintura para techumbre (ba�o)/1000003619.jpg",
-        "title": "Reparaci�n de techo (logia), limpieza y pintura para techumbre (ba�o)",
+        "src": "imagenes/Reparación de paredes con humedad /1000003676.jpg",
+        "title": "Reparación de paredes con humedad",
         "category": "construccion"
     },
     {
-        "src": "Reparaci�n de techo (logia), limpieza y pintura para techumbre (ba�o)/1000003622.jpg",
-        "title": "Reparaci�n de techo (logia), limpieza y pintura para techumbre (ba�o)",
+        "src": "imagenes/Reparación de paredes con humedad /1000003679.jpg",
+        "title": "Reparación de paredes con humedad",
         "category": "construccion"
     },
     {
-        "src": "Reparaci�n de techo (logia), limpieza y pintura para techumbre (ba�o)/1000003625.jpg",
-        "title": "Reparaci�n de techo (logia), limpieza y pintura para techumbre (ba�o)",
+        "src": "imagenes/Reparación de paredes con humedad /1000003682.jpg",
+        "title": "Reparación de paredes con humedad",
         "category": "construccion"
     },
     {
-        "src": "Reparaci�n de techo (logia), limpieza y pintura para techumbre (ba�o)/1000003629.jpg",
-        "title": "Reparaci�n de techo (logia), limpieza y pintura para techumbre (ba�o)",
+        "src": "imagenes/Reparación de techo (logia), limpieza y pintura para techumbre (baño)/1000003529.jpg",
+        "title": "Reparación de techo (logia), limpieza y pintura para techumbre (baño)",
         "category": "construccion"
     },
     {
-        "src": "Reparaci�n de techo (logia), limpieza y pintura para techumbre (ba�o)/1000003632.jpg",
-        "title": "Reparaci�n de techo (logia), limpieza y pintura para techumbre (ba�o)",
+        "src": "imagenes/Reparación de techo (logia), limpieza y pintura para techumbre (baño)/1000003532.jpg",
+        "title": "Reparación de techo (logia), limpieza y pintura para techumbre (baño)",
         "category": "construccion"
     },
     {
-        "src": "Restauraci�n de muebles de terraza (etrusco) lijado, pintura y patina de acabados/1000003499.jpg",
-        "title": "Restauraci�n de muebles de terraza (etrusco) lijado, pintura y patina de acabados",
+        "src": "imagenes/Reparación de techo (logia), limpieza y pintura para techumbre (baño)/1000003583.jpg",
+        "title": "Reparación de techo (logia), limpieza y pintura para techumbre (baño)",
         "category": "construccion"
     },
     {
-        "src": "Restauraci�n de muebles de terraza (etrusco) lijado, pintura y patina de acabados/1000003502.jpg",
-        "title": "Restauraci�n de muebles de terraza (etrusco) lijado, pintura y patina de acabados",
+        "src": "imagenes/Reparación de techo (logia), limpieza y pintura para techumbre (baño)/1000003589.jpg",
+        "title": "Reparación de techo (logia), limpieza y pintura para techumbre (baño)",
         "category": "construccion"
     },
     {
-        "src": "Restauraci�n de muebles de terraza (etrusco) lijado, pintura y patina de acabados/1000003505.jpg",
-        "title": "Restauraci�n de muebles de terraza (etrusco) lijado, pintura y patina de acabados",
+        "src": "imagenes/Reparación de techo (logia), limpieza y pintura para techumbre (baño)/1000003592.jpg",
+        "title": "Reparación de techo (logia), limpieza y pintura para techumbre (baño)",
         "category": "construccion"
     },
     {
-        "src": "Restauraci�n de muebles de terraza (etrusco) lijado, pintura y patina de acabados/1000003508.jpg",
-        "title": "Restauraci�n de muebles de terraza (etrusco) lijado, pintura y patina de acabados",
+        "src": "imagenes/Reparación de techo (logia), limpieza y pintura para techumbre (baño)/1000003595.jpg",
+        "title": "Reparación de techo (logia), limpieza y pintura para techumbre (baño)",
         "category": "construccion"
     },
     {
-        "src": "Restauraci�n de muebles de terraza (etrusco) lijado, pintura y patina de acabados/1000003550.jpg",
-        "title": "Restauraci�n de muebles de terraza (etrusco) lijado, pintura y patina de acabados",
+        "src": "imagenes/Reparación de techo (logia), limpieza y pintura para techumbre (baño)/1000003598.jpg",
+        "title": "Reparación de techo (logia), limpieza y pintura para techumbre (baño)",
         "category": "construccion"
     },
     {
-        "src": "Restauraci�n de muebles de terraza (etrusco) lijado, pintura y patina de acabados/1000003553.jpg",
-        "title": "Restauraci�n de muebles de terraza (etrusco) lijado, pintura y patina de acabados",
+        "src": "imagenes/Reparación de techo (logia), limpieza y pintura para techumbre (baño)/1000003601.jpg",
+        "title": "Reparación de techo (logia), limpieza y pintura para techumbre (baño)",
         "category": "construccion"
     },
     {
-        "src": "Restauraci�n de muebles de terraza (etrusco) lijado, pintura y patina de acabados/1000003556.jpg",
-        "title": "Restauraci�n de muebles de terraza (etrusco) lijado, pintura y patina de acabados",
+        "src": "imagenes/Reparación de techo (logia), limpieza y pintura para techumbre (baño)/1000003604.jpg",
+        "title": "Reparación de techo (logia), limpieza y pintura para techumbre (baño)",
         "category": "construccion"
     },
     {
-        "src": "Restauraci�n de muebles de terraza (etrusco) lijado, pintura y patina de acabados/1000003559.jpg",
-        "title": "Restauraci�n de muebles de terraza (etrusco) lijado, pintura y patina de acabados",
+        "src": "imagenes/Reparación de techo (logia), limpieza y pintura para techumbre (baño)/1000003607.jpg",
+        "title": "Reparación de techo (logia), limpieza y pintura para techumbre (baño)",
         "category": "construccion"
     },
     {
-        "src": "Restauraci�n de muebles de terraza (etrusco) lijado, pintura y patina de acabados/1000003562.jpg",
-        "title": "Restauraci�n de muebles de terraza (etrusco) lijado, pintura y patina de acabados",
+        "src": "imagenes/Reparación de techo (logia), limpieza y pintura para techumbre (baño)/1000003619.jpg",
+        "title": "Reparación de techo (logia), limpieza y pintura para techumbre (baño)",
         "category": "construccion"
     },
     {
-        "src": "Restauraci�n de muebles de terraza (etrusco) lijado, pintura y patina de acabados/1000003565.jpg",
-        "title": "Restauraci�n de muebles de terraza (etrusco) lijado, pintura y patina de acabados",
+        "src": "imagenes/Reparación de techo (logia), limpieza y pintura para techumbre (baño)/1000003622.jpg",
+        "title": "Reparación de techo (logia), limpieza y pintura para techumbre (baño)",
         "category": "construccion"
     },
     {
-        "src": "Restauraci�n de muebles de terraza (etrusco) lijado, pintura y patina de acabados/1000003568.jpg",
-        "title": "Restauraci�n de muebles de terraza (etrusco) lijado, pintura y patina de acabados",
+        "src": "imagenes/Reparación de techo (logia), limpieza y pintura para techumbre (baño)/1000003625.jpg",
+        "title": "Reparación de techo (logia), limpieza y pintura para techumbre (baño)",
         "category": "construccion"
     },
     {
-        "src": "Restauraci�n de muebles de terraza (etrusco) lijado, pintura y patina de acabados/1000003571.jpg",
-        "title": "Restauraci�n de muebles de terraza (etrusco) lijado, pintura y patina de acabados",
+        "src": "imagenes/Reparación de techo (logia), limpieza y pintura para techumbre (baño)/1000003629.jpg",
+        "title": "Reparación de techo (logia), limpieza y pintura para techumbre (baño)",
         "category": "construccion"
     },
     {
-        "src": "Vitrificado de terraza�/1000003511.jpg",
-        "title": "Vitrificado de terraza�",
+        "src": "imagenes/Reparación de techo (logia), limpieza y pintura para techumbre (baño)/1000003632.jpg",
+        "title": "Reparación de techo (logia), limpieza y pintura para techumbre (baño)",
         "category": "construccion"
     },
     {
-        "src": "Vitrificado de terraza�/1000003514.jpg",
-        "title": "Vitrificado de terraza�",
+        "src": "imagenes/Restauración de muebles de terraza (etrusco) lijado, pintura y patina de acabados/1000003499.jpg",
+        "title": "Restauración de muebles de terraza (etrusco) lijado, pintura y patina de acabados",
         "category": "construccion"
     },
     {
-        "src": "Vitrificado de terraza�/1000003517.jpg",
-        "title": "Vitrificado de terraza�",
+        "src": "imagenes/Restauración de muebles de terraza (etrusco) lijado, pintura y patina de acabados/1000003502.jpg",
+        "title": "Restauración de muebles de terraza (etrusco) lijado, pintura y patina de acabados",
         "category": "construccion"
     },
     {
-        "src": "Vitrificado de terraza�/1000003520.jpg",
-        "title": "Vitrificado de terraza�",
+        "src": "imagenes/Restauración de muebles de terraza (etrusco) lijado, pintura y patina de acabados/1000003505.jpg",
+        "title": "Restauración de muebles de terraza (etrusco) lijado, pintura y patina de acabados",
+        "category": "construccion"
+    },
+    {
+        "src": "imagenes/Restauración de muebles de terraza (etrusco) lijado, pintura y patina de acabados/1000003508.jpg",
+        "title": "Restauración de muebles de terraza (etrusco) lijado, pintura y patina de acabados",
+        "category": "construccion"
+    },
+    {
+        "src": "imagenes/Restauración de muebles de terraza (etrusco) lijado, pintura y patina de acabados/1000003550.jpg",
+        "title": "Restauración de muebles de terraza (etrusco) lijado, pintura y patina de acabados",
+        "category": "construccion"
+    },
+    {
+        "src": "imagenes/Restauración de muebles de terraza (etrusco) lijado, pintura y patina de acabados/1000003553.jpg",
+        "title": "Restauración de muebles de terraza (etrusco) lijado, pintura y patina de acabados",
+        "category": "construccion"
+    },
+    {
+        "src": "imagenes/Restauración de muebles de terraza (etrusco) lijado, pintura y patina de acabados/1000003556.jpg",
+        "title": "Restauración de muebles de terraza (etrusco) lijado, pintura y patina de acabados",
+        "category": "construccion"
+    },
+    {
+        "src": "imagenes/Restauración de muebles de terraza (etrusco) lijado, pintura y patina de acabados/1000003559.jpg",
+        "title": "Restauración de muebles de terraza (etrusco) lijado, pintura y patina de acabados",
+        "category": "construccion"
+    },
+    {
+        "src": "imagenes/Restauración de muebles de terraza (etrusco) lijado, pintura y patina de acabados/1000003562.jpg",
+        "title": "Restauración de muebles de terraza (etrusco) lijado, pintura y patina de acabados",
+        "category": "construccion"
+    },
+    {
+        "src": "imagenes/Restauración de muebles de terraza (etrusco) lijado, pintura y patina de acabados/1000003565.jpg",
+        "title": "Restauración de muebles de terraza (etrusco) lijado, pintura y patina de acabados",
+        "category": "construccion"
+    },
+    {
+        "src": "imagenes/Restauración de muebles de terraza (etrusco) lijado, pintura y patina de acabados/1000003568.jpg",
+        "title": "Restauración de muebles de terraza (etrusco) lijado, pintura y patina de acabados",
+        "category": "construccion"
+    },
+    {
+        "src": "imagenes/Restauración de muebles de terraza (etrusco) lijado, pintura y patina de acabados/1000003571.jpg",
+        "title": "Restauración de muebles de terraza (etrusco) lijado, pintura y patina de acabados",
+        "category": "construccion"
+    },
+    {
+        "src": "imagenes/Vitrificado de terraza /1000003511.jpg",
+        "title": "Vitrificado de terraza",
+        "category": "construccion"
+    },
+    {
+        "src": "imagenes/Vitrificado de terraza /1000003514.jpg",
+        "title": "Vitrificado de terraza",
+        "category": "construccion"
+    },
+    {
+        "src": "imagenes/Vitrificado de terraza /1000003517.jpg",
+        "title": "Vitrificado de terraza",
+        "category": "construccion"
+    },
+    {
+        "src": "imagenes/Vitrificado de terraza /1000003520.jpg",
+        "title": "Vitrificado de terraza",
         "category": "construccion"
     }
 ];
-
-function normalizeFolderText(value) {
-    const replacements = [
-        ['Construcci?n', 'Construcci?n'],
-        ['Fabricaci?n', 'Fabricaci?n'],
-        ['Reparaci?n', 'Reparaci?n'],
-        ['Remodelaci?n', 'Remodelaci?n'],
-        ['Restauraci?n', 'Restauraci?n'],
-        ['met?lica', 'met?lica'],
-        ['hormig?n', 'hormig?n'],
-        ['port?n', 'port?n'],
-        ['ba?o', 'ba?o']
-    ];
-
-    let normalized = value || '';
-    replacements.forEach(([broken, fixed]) => {
-        normalized = normalized.split(broken).join(fixed);
-    });
-
-    if (normalized.endsWith('?')) {
-        normalized = normalized.slice(0, -1) + ' ';
-    }
-
-    return normalized;
-}
-
-const GALLERY_FILES = RAW_GALLERY_FILES.map((item) => {
-    const normalizedTitle = normalizeFolderText(item.title);
-    const normalizedSrc = `imagenes/${normalizeFolderText(item.src)}`.replace(/\\/g, '/');
-
-    return {
-        ...item,
-        title: normalizedTitle,
-        src: normalizedSrc
-    };
-});
 
 function renderGalleryItems() {
     if (!galleryGrid) return;
