@@ -433,6 +433,8 @@ const modal = document.getElementById('imageModal');
 const modalImage = document.getElementById('modalImage');
 const modalCaption = document.getElementById('modalCaption');
 const modalClose = document.getElementById('modalClose');
+const modalPrev = document.getElementById('modalPrev');
+const modalNext = document.getElementById('modalNext');
 
 function updateProjectModalImage() {
     if (!activeProjectImages.length) return;
@@ -472,6 +474,20 @@ function closeModal() {
 
 if (modalClose) {
     modalClose.addEventListener('click', closeModal);
+}
+
+if (modalPrev) {
+    modalPrev.addEventListener('click', (e) => {
+        e.stopPropagation();
+        goToPrevProjectImage();
+    });
+}
+
+if (modalNext) {
+    modalNext.addEventListener('click', (e) => {
+        e.stopPropagation();
+        goToNextProjectImage();
+    });
 }
 
 modal.addEventListener('click', (e) => {

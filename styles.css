@@ -789,6 +789,34 @@ section {
     border-radius: 50px;
 }
 
+.modal-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 52px;
+    height: 52px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+    z-index: 2001;
+    transition: var(--transition);
+}
+
+.modal-nav-btn:hover {
+    background: rgba(255, 255, 255, 0.35);
+}
+
+.modal-nav-prev {
+    left: 24px;
+}
+
+.modal-nav-next {
+    right: 24px;
+}
+
 /* ============================================
    FORMULARIOS
    ============================================ */
