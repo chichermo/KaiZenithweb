@@ -435,6 +435,8 @@ const modalCaption = document.getElementById('modalCaption');
 const modalClose = document.getElementById('modalClose');
 const modalPrev = document.getElementById('modalPrev');
 const modalNext = document.getElementById('modalNext');
+let touchStartX = 0;
+let touchEndX = 0;
 
 function updateProjectModalImage() {
     if (!activeProjectImages.length) return;
@@ -450,6 +452,7 @@ function openProjectModal(project, startIndex = 0) {
     updateProjectModalImage();
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
+    document.body.classList.add('modal-open');
 }
 
 function goToNextProjectImage() {
@@ -467,6 +470,7 @@ function goToPrevProjectImage() {
 function closeModal() {
     modal.classList.remove('active');
     document.body.style.overflow = '';
+    document.body.classList.remove('modal-open');
     activeProjectImages = [];
     activeProjectTitle = '';
     activeImageIndex = 0;
@@ -498,6 +502,20 @@ modal.addEventListener('click', (e) => {
 
 if (modalImage) {
     modalImage.addEventListener('click', goToNextProjectImage);
+    modalImage.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].clientX;
+    }, { passive: true });
+    modalImage.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].clientX;
+        const deltaX = touchStartX - touchEndX;
+        const swipeThreshold = 45;
+        if (Math.abs(deltaX) < swipeThreshold) return;
+        if (deltaX > 0) {
+            goToNextProjectImage();
+        } else {
+            goToPrevProjectImage();
+        }
+    }, { passive: true });
 }
 
 document.addEventListener('keydown', (e) => {
