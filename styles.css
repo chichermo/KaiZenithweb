@@ -578,12 +578,13 @@ section {
     border-radius: 50px;
     font-weight: 500;
     cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
     color: var(--color-text);
     font-family: inherit;
     font-size: 0.95rem;
     position: relative;
     overflow: hidden;
+    letter-spacing: 0.2px;
 }
 
 .filter-btn::before {
@@ -614,6 +615,10 @@ section {
     box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
 }
 
+.filter-btn:active {
+    transform: translateY(-1px) scale(0.98);
+}
+
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -627,14 +632,28 @@ section {
     overflow: hidden;
     cursor: pointer;
     box-shadow: 0 10px 28px rgba(0, 0, 0, 0.14);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.gallery-item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0) 25%, rgba(255, 255, 255, 0.3) 45%, rgba(255, 255, 255, 0) 65%);
+    transform: translateX(-140%);
+    transition: transform 0.7s ease;
+    pointer-events: none;
 }
 
 .gallery-item:hover {
     transform: translateY(-8px) scale(1.01);
     box-shadow: 0 20px 42px rgba(0, 0, 0, 0.24);
     border-color: var(--color-primary);
+}
+
+.gallery-item:hover::after {
+    transform: translateX(140%);
 }
 
 .gallery-item img {
@@ -646,6 +665,22 @@ section {
 
 .gallery-item:hover img {
     transform: scale(1.1);
+}
+
+.gallery-item-enter {
+    animation: galleryCardIn 0.55s ease both;
+    animation-delay: calc(var(--stagger-index, 0) * 50ms);
+}
+
+@keyframes galleryCardIn {
+    from {
+        opacity: 0;
+        transform: translateY(18px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }
 
 .gallery-image-placeholder {

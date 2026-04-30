@@ -366,6 +366,15 @@ let activeProjectImages = [];
 let activeProjectTitle = '';
 let activeImageIndex = 0;
 
+function animateGalleryEntrance() {
+    if (!galleryGrid) return;
+    const items = galleryGrid.querySelectorAll('.gallery-item');
+    items.forEach((item, index) => {
+        item.style.setProperty('--stagger-index', String(index));
+        item.classList.add('gallery-item-enter');
+    });
+}
+
 function renderGalleryItems() {
     if (!galleryGrid) return;
 
@@ -412,10 +421,12 @@ if (filterButtons.length > 0 && galleryGrid) {
                     setTimeout(() => {
                         item.style.opacity = '1';
                         item.style.transform = 'scale(1)';
+                        item.classList.add('gallery-item-enter');
                     }, 10);
                 } else {
                     item.style.opacity = '0';
                     item.style.transform = 'scale(0.8)';
+                    item.classList.remove('gallery-item-enter');
                     setTimeout(() => {
                         item.style.display = 'none';
                     }, 300);
@@ -427,6 +438,9 @@ if (filterButtons.length > 0 && galleryGrid) {
 
 function initializeGallery() {
     renderGalleryItems();
+    requestAnimationFrame(() => {
+        animateGalleryEntrance();
+    });
 }
 
 const modal = document.getElementById('imageModal');
